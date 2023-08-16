@@ -309,7 +309,8 @@ img {
     background-color: var(--hero-background);
     /* padding-top: 188px;
     padding-bottom: 188px; */
-    padding: 112px 38px;
+    padding-top: 112px;
+    padding-bottom: 112px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -320,13 +321,15 @@ img {
 
 @media only screen and (min-width: 768px) {
    .hero {
-    padding: 112px 120px;
+    padding-top: 112px;
+    padding-bottom: 112px;
   }
 }
 
 @media only screen and (min-width: 1158px) {
    .hero {
-    padding: 188px 150px;
+    padding-top: 188px;
+    padding-bottom: 188px;
   }
 }
 
@@ -530,22 +533,27 @@ img {
 
 .team {
     background-color: var(--text-lightcolor);
+    padding: 96px 0;
 }
 
-.team-container {
-    padding: 96px 82px;
-}
+
 
 @media only screen and (min-width: 768px) {
-   .team-container {
-    padding: 96px 108px;
+   .team {
+    padding: 96px 0;
   }
 }
 
 @media only screen and (min-width: 1158px) {
-   .team-container{
+   .team {
     padding: 120px 0 120px 0;
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+.team-container {
+    max-width: 584px;
+}
 }
 
 .team-title {
@@ -575,6 +583,9 @@ img {
     box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08);
+    width: 264px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 @media only screen and (min-width: 768px) {
@@ -670,20 +681,26 @@ img {
 
   /* /////////Clients-section///////////////// */
 
-.clients-container {
+.clients-section {
     padding: 96px 16px;
 }
 
 @media only screen and (min-width: 768px) {
-   .clients-container {
-    padding: 96px 108px;
+   .clients-section {
+    padding: 96px 0;
   }
 }
 
 @media only screen and (min-width: 1158px) {
-.clients-container {
+.clients-section {
     padding: 120px 0 120px 0;
   }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1157px) {
+    .clients-container {
+        max-width: 584px;
+    }
 }
 
 .clients-title {
@@ -736,7 +753,6 @@ img {
     width: 100%;
     height: 100%;
     color: var(--clients-color);
-    padding: 16px 32px;
     border: 1px solid var(--clients-color);
     border-radius: 4px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -819,14 +835,15 @@ img {
         flex-direction: row;
         flex-wrap: wrap;
         column-gap: 24px;
-        padding: 96px 108px;
+        padding: 96px 0;
+        max-width: 584px;
     }
 }
 
 @media only screen and (min-width: 1158px) {
    .footer-wrapper {
     flex-direction: row;
-    padding: 0;
+    padding: 0 15px;
     gap: 0;
   }
 }
@@ -1245,6 +1262,13 @@ img {
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+   .modal {
+    width: 300px;
+    padding: 72px 15px 24px 15px;
+  }
+}
+
 .backdrop.is-hidden .modal {
     opacity: 0;
     transform: translateX(-50%) translateY(-70%);
@@ -1295,12 +1319,24 @@ img {
     margin-bottom: 16px;
 }
 
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+    .modal-caption {
+        width: 100%;
+    }
+}
+
 .modal-form {
     display: flex;
     width: 360px;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+    .modal-form {
+        width: 270px;
+    }
 }
 
 .modal-form-container {
@@ -1331,6 +1367,12 @@ img {
     outline: transparent;
     border: 1px solid rgba(46, 47, 66, 0.40);
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+    .modal-form-input {
+        width: 270px;
+    }
 }
 
 .modal-form-input:focus {
@@ -1369,6 +1411,12 @@ img {
     resize: none;
     padding: 8px 16px;
     transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 420px) {
+    .modal-form-comment {
+        width: 270px;
+    }
 }
 
 .modal-form-comment:focus {
@@ -1531,7 +1579,6 @@ img {
 
 .mobile-menu .link {
     display: block;
-    padding: 10px;
     text-decoration: none;
     font-size: 36px;
     font-weight: 700;
@@ -1539,11 +1586,16 @@ img {
     letter-spacing: 0.72px;
     color: var(--hero-background);
     text-transform: capitalize;
+    margin-bottom: 40px;
 }
 
 .mobile-menu .link:focus,
 .mobile-menu .link:hover {
     color: var(--button-color);
+}
+
+.mobile-menu .link.active {
+    color: #404bbf;
 }
 
 .mobile-address-list {
@@ -1554,7 +1606,7 @@ img {
     display: flex;
     color: var(--logo-color);
     font-style: normal;
-    font-size: 36px;
+    font-size: 24px;
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: 0.72px;
@@ -1573,7 +1625,7 @@ img {
 
 .mobile-list-socials {
     display: flex;
-    gap: 56px;
+    gap: 30px;
 }
 
 .mobile-socials-item {
